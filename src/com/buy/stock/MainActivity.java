@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentTransaction;
 public class MainActivity extends FragmentActivity {
 	private static final String TAG = "MainAcitivty";
 
-	private FundFragment fundFragment = new FundFragment();
 	private StockFragment stockFragment = new StockFragment();
 	private StudyFragment studyFragment = new StudyFragment();
 
@@ -19,7 +18,7 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 	}
 
 	private void switchFragment(FragmentTab tab) {
@@ -30,9 +29,7 @@ public class MainActivity extends FragmentActivity {
 		}
 
 		BaseFragment useFragment = null;
-		if (tab == FragmentTab.FUND) {
-			useFragment = fundFragment;
-		} else if (tab == FragmentTab.STOCK) {
+		if (tab == FragmentTab.STOCK) {
 			useFragment = stockFragment;
 		} else if (tab == FragmentTab.STUDY) {
 			useFragment = studyFragment;

@@ -12,6 +12,31 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter {
 
 	private List<T> dataList = new ArrayList<T>();
 
+	public void addData(T t) {
+		if (t == null) {
+			return;
+		}
+		dataList.add(t);
+		notifyDataSetChanged();
+	}
+
+	public void addDataToListTop(T t) {
+		if (t == null) {
+			return;
+		}
+		dataList.add(0, t);
+		notifyDataSetChanged();
+	}
+
+	public void resetDataList(List<T> dataList) {
+		if (dataList == null || dataList.size() == 0) {
+			return;
+		}
+		this.dataList.clear();
+		this.dataList.addAll(dataList);
+		notifyDataSetChanged();
+	}
+
 	@Override
 	public int getCount() {
 		return dataList.size();
@@ -42,6 +67,7 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter {
 
 	/**
 	 * 子适配器界面实现
+	 * 
 	 * @param position
 	 * @param v
 	 * @param group
