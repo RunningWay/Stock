@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Stock</string>
+    <string name="tab_stock">股票</string>
+    <string name="tab_fund">基金</string>
+    <string name="tab_study">学习</string>
+
+</resources>

@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/title_bg"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8" >
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_tab"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="@color/gray"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tab_stock"
+            style="@style/app_tab"
+            android:drawableTop="@drawable/bottom_tab_stock"
+            android:text="@string/tab_stock" />
+
+        <TextView
+            android:id="@+id/tab_fund"
+            style="@style/app_tab"
+            android:drawableTop="@drawable/bottom_tab_fund"
+            android:text="@string/tab_fund" />
+
+        <TextView
+            android:id="@+id/tab_study"
+            style="@style/app_tab"
+            android:text="@string/tab_study" />
+    </LinearLayout>
+
+</LinearLayout>
