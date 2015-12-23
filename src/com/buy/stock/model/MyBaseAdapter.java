@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 public abstract class MyBaseAdapter<T> extends BaseAdapter {
 	private final static String TAG = "MyBaseAdapter";
 
-	private List<T> dataList = new ArrayList<T>();
+	public List<T> dataList = new ArrayList<T>();
 
 	public void addData(T t) {
 		if (t == null) {

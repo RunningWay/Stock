@@ -41,6 +41,7 @@ public class TagView extends View {
 		Path path = new Path();
 		path.moveTo(0, 0);
 		path.lineTo(getWidth(), 0);
+		path.lineTo(getWidth(), getHeight());
 		return path;
 	}
 }
