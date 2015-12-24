@@ -6,11 +6,11 @@
     <string name="tab_fund">基金</string>
     <string name="tab_study">学习</string>
 	
-    <string name="stock_dayStartPrice">开盘价:<xliff:g id="price">%s</xliff:g></string>
-    <string name="stock_currentPrice">当前价格:<xliff:g id="price">%s</xliff:g></string>
+    <string name="stock_dayStartPrice">开:<xliff:g id="price">%s</xliff:g></string>
+    <string name="stock_currentPrice"><xliff:g id="price">%s</xliff:g></string>
     <string name="stock_yesterdayEndPrice">昨收:<xliff:g id="price">%s</xliff:g></string>
     
     <string name="stock_dayHighPrice">最高:<xliff:g id="price">%s</xliff:g></string>
     <string name="stock_dayLowPrice">最低:<xliff:g id="price">%s</xliff:g></string>
-    <string name="stock_num">成交量:<xliff:g id="num">%s</xliff:g>手</string>
+    <string name="stock_num">量:<xliff:g id="num">%s</xliff:g>万手</string>
 </resources>

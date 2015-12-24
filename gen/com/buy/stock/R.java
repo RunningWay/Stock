@@ -41,11 +41,11 @@ public final class R {
         public static final int fund_listview=0x7f080006;
         public static final int id_stock_listview=0x7f080010;
         public static final int id_view_companyname=0x7f080007;
-        public static final int id_view_currentprice=0x7f080009;
+        public static final int id_view_currentprice=0x7f080008;
         public static final int id_view_dayhighprice_name=0x7f08000b;
         public static final int id_view_daylowprice_name=0x7f08000c;
         public static final int id_view_daynum_name=0x7f08000d;
-        public static final int id_view_daystartprice=0x7f080008;
+        public static final int id_view_daystartprice=0x7f080009;
         public static final int id_view_yesterdayendprice_name=0x7f08000a;
         public static final int tab_fund=0x7f080004;
         public static final int tab_stock=0x7f080003;
