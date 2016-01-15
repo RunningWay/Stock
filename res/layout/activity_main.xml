@@ -5,14 +5,22 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"
-        android:background="@drawable/title_bg"
-        android:orientation="horizontal" >
-    </LinearLayout>
+        android:background="@drawable/cpay_title_bg" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
 
     <FrameLayout
         android:id="@+id/fragment_content"
@@ -26,25 +34,42 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"
-        android:background="@color/gray"
+        android:background="@drawable/bottom_bg_day"
         android:orientation="horizontal" >
 
-        <TextView
-            android:id="@+id/tab_stock"
+        <LinearLayout
             style="@style/app_tab"
-            android:drawableTop="@drawable/bottom_tab_stock"
-            android:text="@string/tab_stock" />
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/tab_fund"
-            style="@style/app_tab"
-            android:drawableTop="@drawable/bottom_tab_fund"
-            android:text="@string/tab_fund" />
+            <ImageView
+                android:id="@+id/tab_stock_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/bottom_tab_stock" />
 
-        <TextView
-            android:id="@+id/tab_study"
+            <TextView
+                android:id="@+id/tab_stock_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_stock" />
+        </LinearLayout>
+
+        <LinearLayout
             style="@style/app_tab"
-            android:text="@string/tab_study" />
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/tab_study_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/bottom_tab_study" />
+
+            <TextView
+                android:id="@+id/tab_study_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_study" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

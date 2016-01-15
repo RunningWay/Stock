@@ -1,10 +1,9 @@
 package com.buy.stock.model;
 
-import java.text.DecimalFormat;
-
 import com.buy.stock.R;
-
+import com.buy.stock.utils.Utils;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,39 +28,39 @@ public class StockAdapter extends MyBaseAdapter<Stock> {
 			tag = new Tag();
 			View parent = LayoutInflater.from(context).inflate(R.layout.stock_item_layout, null);
 			tag.mViewCompanyName = (TextView)parent.findViewById(R.id.id_view_companyname);
-			tag.mViewDayStartPrice = (TextView)parent.findViewById(R.id.id_view_daystartprice);
 			tag.mViewCurrentPrice = (TextView)parent.findViewById(R.id.id_view_currentprice);
-			tag.mViewYestoryDayPrice = (TextView)parent.findViewById(R.id.id_view_yesterdayendprice_name);
-			tag.mViewHighPrice = (TextView)parent.findViewById(R.id.id_view_dayhighprice_name);
-			tag.mViewLowPrice = (TextView)parent.findViewById(R.id.id_view_daylowprice_name);
-			tag.mViewTotalNum = (TextView)parent.findViewById(R.id.id_view_daynum_name);
+			tag.mViewPercent = (TextView)parent.findViewById(R.id.id_view_percent);
+			tag.mViewCompanyCode = (TextView)parent.findViewById(R.id.id_view_companycode);
 			v = parent;
 			v.setTag(tag);
 		}
 		tag = (Tag) v.getTag();
 		Stock sStock = dataList.get(position);
 		tag.mViewCompanyName.setText(sStock.stockName);
-		tag.mViewDayStartPrice.setText(context.getString(R.string.stock_dayStartPrice,new Object[]{formatFloat(sStock.dayStartPrice)}));
-		tag.mViewCurrentPrice.setText(context.getString(R.string.stock_currentPrice,new Object[]{formatFloat(sStock.currentPrice)}));
-		tag.mViewYestoryDayPrice.setText(context.getString(R.string.stock_yesterdayEndPrice, new Object[]{formatFloat(sStock.yesterdayEndPrice)}));
-		tag.mViewHighPrice.setText(context.getString(R.string.stock_dayHighPrice, new Object[]{formatFloat(sStock.todayMaxPrice)}));
-		tag.mViewLowPrice.setText(context.getString(R.string.stock_dayLowPrice,new Object[]{ formatFloat(sStock.todayMinPrice)}));
-		tag.mViewTotalNum.setText(context.getString(R.string.stock_num, new Object[]{sStock.traNumber}));
+		tag.mViewCurrentPrice.setText(context.getString(R.string.stock_currentPrice,new Object[]{Utils.formatFloat(sStock.currentPrice)}));
+		tag.mViewCompanyCode.setText(sStock.stockId.substring(2, sStock.stockId.length()));
+		float currentPrice = Float.parseFloat(sStock.currentPrice);
+		float yestoryEndDayPrice = Float.parseFloat(sStock.yesterdayEndPrice);
+		float delPrice = currentPrice - yestoryEndDayPrice;
+		float percent = (delPrice/yestoryEndDayPrice) * 100;
+		tag.mViewPercent.setText(Utils.formatFloat(percent)+"%");
+		if(percent>0){
+			tag.mViewCurrentPrice.setTextColor(context.getResources().getColor(R.color.stock_red));
+			tag.mViewPercent.setBackgroundResource(R.drawable.radius_red);
+		}else if(percent<0){
+			tag.mViewCurrentPrice.setTextColor(context.getResources().getColor(R.color.stock_green));
+			tag.mViewPercent.setBackgroundResource(R.drawable.radius_green);
+		}else{
+			tag.mViewCurrentPrice.setTextColor(Color.BLACK);
+			tag.mViewPercent.setTextColor(Color.DKGRAY);
+		}
 		return v;
 	}
 	
-	private String formatFloat(String value){
-		DecimalFormat  fnum  =   new  DecimalFormat("##0.00");    
-		return fnum.format(Float.parseFloat(value));   
-	}
-
 	private class Tag {
 		public TextView mViewCompanyName;
-		public TextView mViewDayStartPrice;
+		public TextView mViewCompanyCode;
 		public TextView mViewCurrentPrice;
-		public TextView mViewYestoryDayPrice;
-		public TextView mViewHighPrice;
-		public TextView mViewLowPrice;
-		public TextView mViewTotalNum;
+		public TextView mViewPercent;
 	}
 }

@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="app_name">Stock</string>
+    <string name="app_name">新手炒股</string>
     <string name="tab_stock">股票</string>
     <string name="tab_fund">基金</string>
     <string name="tab_study">学习</string>
+    
+    <string name="stock_sh">上证指数</string>
+    <string name="stock_sz">深圳成指</string>
+    
+    <string name="stock_name">证券名称</string>
+    <string name="stock_currentprice_name">当前价</string>
+    <string name="stock_percent_name">涨跌幅</string>
 	
     <string name="stock_dayStartPrice">开:<xliff:g id="price">%s</xliff:g></string>
     <string name="stock_currentPrice"><xliff:g id="price">%s</xliff:g></string>
     <string name="stock_yesterdayEndPrice">昨收:<xliff:g id="price">%s</xliff:g></string>
+    <string name="stock_percent"><xliff:g id="price">%s</xliff:g>%</string>
     
     <string name="stock_dayHighPrice">最高:<xliff:g id="price">%s</xliff:g></string>
     <string name="stock_dayLowPrice">最低:<xliff:g id="price">%s</xliff:g></string>

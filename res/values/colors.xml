@@ -2,4 +2,7 @@
 <resources>
     <color name="red">#FF4040</color>
     <color name="gray">#DBDBDB</color>
+    
+    <color name="stock_green">#008B00</color>
+    <color name="stock_red">#EE0000</color>
 </resources>

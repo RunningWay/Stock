@@ -1,14 +1,12 @@
 package com.buy.stock.model;
 
-public class Stock {
-	public String stockId;// 股票ID
-	public String stockName; // 股票名称
+public class Stock extends BaseStock{
 	public String dayStartPrice; // 开盘价
 	public String yesterdayEndPrice; // 昨收
 	public String currentPrice; // 当前价格
 	public String todayMaxPrice; // 当日最高
 	public String todayMinPrice; // 当日最低
-	public int traNumber; // 成交量
+	public long traNumber; // 成交量
 	public String buyOne;// 买1
 	public String buyOnePrice;//买1报价
 	public String buyTwo;//买2
