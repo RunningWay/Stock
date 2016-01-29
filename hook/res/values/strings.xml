@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">红包大王</string>
+    <string name="des"></string>
+    <string name="hello_world">Hello world!</string>
+
+    <string-array name="lister">
+        <item>com.tencent.mm</item>
+        <item>com.tencent.mobileqq</item>
+    </string-array>
+</resources>
